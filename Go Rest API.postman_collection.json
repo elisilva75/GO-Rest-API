@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "d91e9dd0-b838-4956-b285-72c4ed5b571b",
+		"name": "Go Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11963729"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Criar Usuario",
+					"item": [
+						{
+							"name": "Criar Usuario",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Tenali Ramakrishna\",\r\n    \"sexo\": \"masculino\",\r\n    \"email\": \" tenali.ramakrishna@15ce.com \",\r\n    \"status\": \"ativo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/users",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Excluir Usuario",
+					"item": [
+						{
+							"name": "Deletar usuario",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/users/{{id_delete}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"users",
+										"{{id_delete}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Alterar Usuario",
+					"item": [
+						{
+							"name": "Alterar usuario",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Allasani Peddana\",\r\n    \"email\": \" allasani.peddana@15ce.com \",\r\n    \"status\": \"ativo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/users{{id_update}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"users{{id_update}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Criar Posts",
+					"item": [
+						{
+							"name": "Criar Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 8760,\r\n    \"user_id\": 787199,\r\n    \"title\": \"Magni currus timor vulpes tristis curatio vaco aut temporibus bellum deleo voluptas tempore verecundia solitudo.\",\r\n    \"body\": \"Subvenio crustulum placeat. Acidus vergo confugo. Benevolentia arcus accusamus. Amita adultus velut. Textus degero video. Crinis agnitio aqua. Artificiose culpa deludo. Veritatis vado validus. Subito adulatio sumptus. Somnus spero defaeco. Usitas demitto amplexus. Reprehenderit rerum xiphias. Quae vorago tibi. Sit subiungo voluptas. Coniuratio tandem traho. Depereo qui traho. Patior vigilo spoliatio. Rerum deduco atavus.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/posts",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Buscar Posts",
+					"item": [
+						{
+							"name": "Buscar Post",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/posts",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Busca Post especifico",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/posts/{{id_post_busca}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts",
+										"{{id_post_busca}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Excluir Posts",
+					"item": [
+						{
+							"name": "Deletar post",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/posts{{id_post_excluir}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts{{id_post_excluir}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Comentarios",
+			"item": [
+				{
+					"name": "Buscar Comentarios",
+					"item": [
+						{
+							"name": "Buscar comentarios",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/comments",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Busca comentario especifico",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/comments/{{id_comentariobusca}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments",
+										"{{id_comentariobusca}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Criar Comentarios",
+					"item": [
+						{
+							"name": "Criar comentario",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 6520,\r\n    \"post_id\": 8747,\r\n    \"name\": \"Laxmi Joshi\",\r\n    \"email\": \"laxmi_joshi@bode.biz\",\r\n    \"body\": \"Aspernatur at reiciendis. Voluptatem sunt et. Et veritatis quia. Rerum distinctio rerum.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/comments",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Excluir Comentarios",
+					"item": [
+						{
+							"name": "Excluir Comentario",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/comments{{id_comentario_excluir}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments{{id_comentario_excluir}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(pm.info.requestName)"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"pm.test(\"Body matches string\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"OK.\");",
+					"});",
+					"pm.test(\"Response time is less than 2seg\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id_comentario_excluir",
+			"value": "6519",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "id_comentariobusca",
+			"value": "6528",
+			"type": "string"
+		},
+		{
+			"key": "id_post_excluir",
+			"value": "8762",
+			"type": "string"
+		},
+		{
+			"key": "id_post_busca",
+			"value": "8764",
+			"type": "string"
+		},
+		{
+			"key": "id_update",
+			"value": "5",
+			"type": "string"
+		},
+		{
+			"key": "id_delete",
+			"value": "788864",
+			"type": "string"
+		}
+	]
+}
